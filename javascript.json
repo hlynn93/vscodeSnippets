@@ -1,0 +1,47 @@
+{
+	// Place your snippets for javascript here. Each snippet is defined under a snippet name and has a prefix, body and
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+
+	// React related snippets
+	"reactFlowComponent": {
+		"prefix": "rfc",
+		"body": "// @flow\nimport React, { PureComponent } from 'react';\n\ntype Props = {\n\n}\n\nexport class ${1:${TM_FILENAME_BASE}} extends PureComponent<Props> {\n\trender() {\n\t\treturn (\n\t\t\t<div>\n\t\t\t\t$0\n\t\t\t</div>\n\t\t);\n\t}\n}\n\nexport default ${1:${TM_FILENAME_BASE}};",
+		"description": "Creates a React pure component class with Flow and ES6 module system"
+	},
+	"reactStateless": {
+		"prefix": "rfsc",
+		"body": "// @flow\nimport React from 'react';\n\ntype Props = {\n\n}\n\nexport const ${1:${TM_FILENAME_BASE}} = () => {\n\treturn (\n\t\t<div>\n\t\t\t$0\n\t\t</div>\n\t);\n};\n\nexport default ${1:${TM_FILENAME_BASE}};",
+		"description": "Creates a stateless React component with Flow and ES6 module system"
+	},
+	"mapStateToProps": {
+		"prefix": "mstp",
+		"body": "const mapStateToProps = (state, ownProps) => ({\n\n})",
+		"description": "Creats mapStateToProps method"
+	},
+	"mapDispatchToProps": {
+		"prefix": "mdtp",
+		"body": "const mapDispatchToProps = (dispatch, ownProps) => ({\n\tactions: bindActionCreators({\n\t${0}\n\t}, dispatch)\n}) ",
+		"description": "Creats mapStateToProps method"
+	},
+	"exportDefaultConnect": {
+		"prefix": "edc",
+		"body": "export default connect(mapStateToProps, mapDispatchToProps)(${0})",
+		"description": "Exports and connect to redux store"
+	},
+	"exportDefaultConnectTheme": {
+		"prefix": "edtc",
+		"body": "export default connect(mapStateToProps, mapDispatchToProps)(withStyles(\n\tstyles, { withTheme: true }\n)(${0}))",
+		"description": "Exports and connect to redux store"
+	}
+}
